@@ -9,17 +9,30 @@ import Content from "./Components/Content"
 
 class App extends Component {
 
-  handleSelect = page => {
+  constructor(props) {
+    super(props);
 
-    console.log(page)
+    // reference to content page
+    this.contentRef = React.createRef();
   }
+
+  /**
+   * Method that listens to clicks from the navigation bar
+   * @param {string} page the page to render
+   */
+  handleSelect = page => {
+    
+    // use the reference to the content to change the page
+    this.contentRef.current.changePage(page);
+  }
+
 
   render()
   {
     return (
       <div className="container">
           <Sidebar onSelect={this.handleSelect}/>
-          <Content/>
+          <Content ref={this.contentRef} />
       </div>
     );
   }

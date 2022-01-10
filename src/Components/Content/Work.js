@@ -9,7 +9,7 @@ class Work extends Component {
     render() {
         return (
             <div className="work">
-                <span>This will house the workig experience</span>
+                <span>This will house the Working Experience</span>
             </div>
         );
     }

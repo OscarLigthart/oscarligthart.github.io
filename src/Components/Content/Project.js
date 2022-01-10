@@ -8,7 +8,7 @@ class Project extends Component {
     render() {
         return (
             <div className="project">
-                <span>This will house the project portfolio</span>
+                <span>This will house the Project Portfolio</span>
             </div>
         );
     }

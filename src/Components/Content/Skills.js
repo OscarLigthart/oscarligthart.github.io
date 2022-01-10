@@ -8,7 +8,7 @@ class Skills extends Component {
     render() {
         return (
             <div className="skills">
-                <span>This will house the skills</span>
+                <span>This will house the Skills</span>
             </div>
         );
     }

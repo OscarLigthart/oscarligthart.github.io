@@ -8,7 +8,7 @@ class Overview extends Component {
     render() {
         return (
             <div className="overview">
-                <span>This will house the overview</span>
+                <span>This will house the Overview</span>
             </div>
         );
     }
