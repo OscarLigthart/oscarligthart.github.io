@@ -136,6 +136,8 @@ p {
   margin-bottom: 5px;
 }
 .navigation .navigation-list .navigation-item .selected {
+  pointer-events: none;
+  cursor: pointer;
   background-color: #F7F8F7;
   color: black;
 }
