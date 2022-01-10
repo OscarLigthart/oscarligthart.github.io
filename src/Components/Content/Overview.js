@@ -5,10 +5,6 @@ import React, { Component } from "react";
 
 class Overview extends Component {
  
-    changePage = page => {
-        // todo implement
-    }
-    
     render() {
         return (
             <div className="overview">

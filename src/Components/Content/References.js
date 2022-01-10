@@ -1,13 +1,9 @@
 /**
- *  The overview content component of the website
+ *  The references content component of the website
  */
 import React, { Component } from "react";
 
 class References extends Component {
-
-    changePage = page => {
-        // todo implement
-    }
     
     render() {
         return (

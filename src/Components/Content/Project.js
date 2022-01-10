@@ -1,14 +1,10 @@
 /**
- *  The overview content component of the website
+ *  The project content component of the website
  */
 import React, { Component } from "react";
 
 class Project extends Component {
-
-    changePage = page => {
-        // todo implement
-    }
-    
+ 
     render() {
         return (
             <div className="project">

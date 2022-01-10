@@ -1,14 +1,10 @@
 /**
- *  The overview content component of the website
+ *  The skills content component of the website
  */
 import React, { Component } from "react";
 
 class Skills extends Component {
 
-    changePage = page => {
-        // todo implement
-    }
-    
     render() {
         return (
             <div className="skills">
