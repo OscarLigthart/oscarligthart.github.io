@@ -1,14 +1,20 @@
 /**
  *  The main content component of the website
  */
+ import React, { Component } from "react";
 
-
-function Content() {
-    return (
-        <div className="content">
-
-        </div>
-    );
+ class Content extends Component {
+ 
+    changePage = page => {
+        // todo implement
+    }
+    
+    render() {
+        return (
+            <div className="content">
+                
+            </div>
+        );
+    }
 }
-
 export default Content;
