@@ -15,11 +15,9 @@
  */
 .container {
   min-height: 100vh;
-  padding: 0 2rem;
   margin-bottom: 1rem;
-}
-.content {
-  min-height: 100%;
+  display: grid;
+  grid-template-columns: 20em auto;
 }
 /** 
  *  These are the standard styles we will apply to list elements
@@ -80,9 +78,77 @@ p {
 /**
  *  This file holds the stylings for the navigation menu
  */
+.sidebar {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: min-content auto;
+  grid-gap: 2rem;
+  background-color: #0006b1;
+  color: #fff;
+}
+.sidebar .sidebar-contact .sidebar-contact-photo {
+  padding: 2rem 4rem;
+}
+.sidebar .sidebar-contact .sidebar-contact-photo .sidebar-contact-photo-image {
+  max-width: 100%;
+  border-radius: 50%;
+  height: 200px;
+  object-fit: cover;
+}
+.sidebar .sidebar-contact .sidebar-contact-name {
+  font-size: 20pt;
+  padding-bottom: 1rem;
+}
+.sidebar .sidebar-contact .sidebar-contact-info {
+  padding: 0 2rem;
+}
+.sidebar .sidebar-contact .sidebar-contact-info .sidebar-contact-info-item {
+  display: flex;
+}
+.sidebar .sidebar-contact .sidebar-contact-info .sidebar-contact-info-item .icon {
+  padding-right: 1rem;
+}
+.sidebar .sidebar-contact .sidebar-contact-info .sidebar-contact-info-item .text-bundle {
+  display: flex;
+  flex-direction: column;
+}
 /**
  *  Style class for the content container
  */
+.content {
+  min-height: 100%;
+}
+/**
+ *  Main container component that will be housing the content and sidebar pieces
+ */
+.main-container {
+  display: grid;
+  grid-template-rows: 12rem auto;
+}
+/**
+ *  Styles for the navigation menu in the sidebar
+ */
+.navigation .navigation-list .navigation-item {
+  text-align: right;
+  font-size: 16pt;
+  margin-bottom: 5px;
+}
+.navigation .navigation-list .navigation-item .selected {
+  background-color: #F7F8F7;
+  color: black;
+}
+.navigation .navigation-list .navigation-item .navigation-item-box {
+  padding: 0.5rem 1rem;
+  margin-left: 4rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  transition: 0.3s padding ease;
+}
+.navigation .navigation-list .navigation-item .navigation-item-box:hover {
+  padding-right: 1.5rem;
+  background-color: #0066CC;
+  cursor: pointer;
+}
 /**
  *  Styles for the home page
  */

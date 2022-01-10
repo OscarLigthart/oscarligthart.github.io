@@ -5,4 +5,58 @@
 // the root class
 .sidebar {
 
+    // size
+    min-height: 100%;
+
+    // display
+    display:    grid;
+    grid-template-rows: min-content auto;
+    grid-gap: 2rem;
+
+    // colors
+    background-color:   @background-blue;
+    color:              @white-font-color;
+
+    .sidebar-contact {
+
+        .sidebar-contact-photo {
+        
+            padding: 2rem 4rem;
+    
+            .sidebar-contact-photo-image{
+                max-width: 100%;
+                border-radius: 50%;
+                
+                height:200px;
+                object-fit: cover;
+            }
+        }
+
+        .sidebar-contact-name {
+            font-size: 20pt;
+            padding-bottom: 1rem;
+        }
+
+        .sidebar-contact-info {
+
+            padding: 0 2rem;
+            
+            .sidebar-contact-info-item {
+                
+                // display
+                display:    flex;
+
+                // the styling for the font awesome icon
+                .icon {
+                    padding-right: 1rem;
+                }  
+
+                // if we have multiple spans, they should be bundled in a parent
+                .text-bundle {
+                    display: flex;
+                    flex-direction: column;
+                }
+            }
+        }
+    }
 }
