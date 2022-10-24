@@ -29,16 +29,6 @@ class Sidebar extends Component {
                     <div className="sidebar-contact-info">
                         <div className="sidebar-contact-info-item">
                             <span className="icon">
-                                <FontAwesomeIcon icon={faHome}/>
-                            </span>
-                            
-                            <span className="text-bundle">
-                                <span>Carel Willinkgracht 897</span>
-                                <span>1112 ZK Diemen</span>
-                            </span>
-                        </div>
-                        <div className="sidebar-contact-info-item">
-                            <span className="icon">
                                 <FontAwesomeIcon icon={faEnvelope}/>
                             </span>
                             <span>oscarligthart@gmail.com</span>
