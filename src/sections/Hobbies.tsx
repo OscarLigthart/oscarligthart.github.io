@@ -12,6 +12,7 @@ import {
   faCode,
   faChess,
   faFutbol,
+  faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
 
 const img = (name: string) => `${import.meta.env.BASE_URL}img/${name}`;
@@ -21,6 +22,7 @@ type Hobby = {
   text: string;
   icon: IconDefinition;
   image?: string;
+  link?: { url: string; label: string };
 };
 
 const HOBBIES: Hobby[] = [
@@ -41,6 +43,7 @@ const HOBBIES: Hobby[] = [
     text: "Writing and playing music — from jamming with the band to producing tracks at home.",
     icon: faMusic,
     image: img("band_0.jpg"),
+    link: { url: "https://thesteadystates.nl/", label: "The Steady States" },
   },
   {
     title: "Chess",
@@ -82,6 +85,17 @@ function Hobbies() {
               </span>
               <h3 className="hobby__title">{h.title}</h3>
               <p className="hobby__text">{h.text}</p>
+              {h.link && (
+                <a
+                  className="hobby__link"
+                  href={h.link.url}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {h.link.label}
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+              )}
             </div>
           </Reveal>
         ))}
