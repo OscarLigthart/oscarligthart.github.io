@@ -630,6 +630,10 @@ ul { margin: 0; padding: 0; list-style: none; }
   );
   -webkit-mask: radial-gradient(circle at 50% 50%, #000 99%, transparent 100%);
   mask: radial-gradient(circle at 50% 50%, #000 99%, transparent 100%);
+}
+/* Sweep and blips both start their clocks when the radar scrolls into view,
+   so the lit bulb always stays under the sweep line. */
+.web.is-visible .web__sweep {
   animation: radarSweep var(--sweep, 8s) linear infinite;
 }
 /* Radar centre. */
