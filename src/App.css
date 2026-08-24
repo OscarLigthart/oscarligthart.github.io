@@ -411,8 +411,11 @@ ul { margin: 0; padding: 0; list-style: none; }
    ========================================================================= */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.6rem;
+}
+@media (max-width: 720px) {
+  .projects-grid { grid-template-columns: 1fr; }
 }
 .project-card {
   display: flex;
@@ -776,8 +779,14 @@ ul { margin: 0; padding: 0; list-style: none; }
    ========================================================================= */
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.4rem;
+}
+@media (max-width: 900px) {
+  .hobbies-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .hobbies-grid { grid-template-columns: 1fr; }
 }
 .hobby {
   position: relative;
