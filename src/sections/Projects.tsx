@@ -89,7 +89,7 @@ const PROJECTS: Project[] = [
 
 function Projects() {
   return (
-    <Section id="projects" eyebrow="Talks & work" title="Projects" tone="dark">
+    <Section bare id="projects" eyebrow="Talks & work" title="Projects" tone="dark">
       <div className="projects-grid">
         {PROJECTS.map((p, i) => (
           <Reveal as="article" key={p.title} className="project-card" delay={i * 100}>

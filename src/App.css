@@ -506,7 +506,29 @@ main { counter-reset: sec; }
 }
 .section--light,
 .section--dark { background: transparent; color: var(--text); }
-.section__inner { max-width: var(--maxw); margin: 0 auto; }
+.section__inner { position: relative; max-width: var(--maxw); margin: 0 auto; }
+/* A translucent pane the content floats on, so it sits in front of the sky
+   rather than in it. Titles stay on the bare sky above it. */
+.pane,
+.section__body {
+  position: relative;
+  padding: clamp(2rem, 4vw, 3.4rem);
+  background: rgba(7, 11, 23, 0.38);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius);
+  box-shadow: 0 30px 80px rgba(2, 4, 10, 0.45);
+}
+/* Hobbies and projects: the cards carry the pane, the grid stays open. */
+.section__body--bare {
+  padding: 0;
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: 0;
+  box-shadow: none;
+}
 .section__head { margin-bottom: clamp(2.5rem, 5vw, 4rem); max-width: 22ch; }
 .section__eyebrow {
   display: flex;
@@ -739,9 +761,12 @@ main { counter-reset: sec; }
 .project-card {
   display: flex;
   flex-direction: column;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(7, 11, 23, 0.38);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.12);
   border-radius: var(--radius);
+  box-shadow: 0 30px 80px rgba(2, 4, 10, 0.45);
   padding: 1.8rem;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
@@ -1103,10 +1128,12 @@ main { counter-reset: sec; }
 /* =========================================================================
    Hobbies — photo grid
    ========================================================================= */
+/* Prints pinned above the sky rather than a pane laid over it: each photo is
+   matted in a dark border and lit from behind. */
 .hobbies-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.4rem;
+  gap: clamp(0.45rem, 0.9vw, 0.8rem);
 }
 @media (max-width: 900px) {
   .hobbies-grid { grid-template-columns: repeat(2, 1fr); }
@@ -1122,7 +1149,13 @@ main { counter-reset: sec; }
   display: flex;
   align-items: flex-end;
   isolation: isolate;
-  box-shadow: var(--shadow-sm);
+  border: 10px solid rgba(7, 11, 23, 0.82);
+  outline: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 34px 70px rgba(2, 4, 10, 0.6), 0 0 70px rgba(245, 166, 35, 0.12);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.hobby:hover {
+  box-shadow: 0 34px 70px rgba(2, 4, 10, 0.6), 0 0 90px rgba(245, 166, 35, 0.22);
 }
 .hobby__img {
   position: absolute;
@@ -1140,7 +1173,7 @@ main { counter-reset: sec; }
   z-index: -1;
   background: linear-gradient(180deg, rgba(11, 15, 22, 0) 30%, rgba(11, 15, 22, 0.85) 100%);
 }
-.hobby:hover .hobby__img { transform: scale(1.07); }
+.hobby:hover .hobby__img { transform: scale(1.07) translateY(9px); }
 .hobby__body { padding: 1.6rem; color: #fff; }
 .hobby__icon {
   display: inline-flex;

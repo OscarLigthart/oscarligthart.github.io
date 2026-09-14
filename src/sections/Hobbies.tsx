@@ -67,7 +67,7 @@ const HOBBIES: Hobby[] = [
 
 function Hobbies() {
   return (
-    <Section id="hobbies" eyebrow="Off the clock" title="Hobbies" tone="dark">
+    <Section bare id="hobbies" eyebrow="Off the clock" title="Hobbies" tone="dark">
       <div className="hobbies-grid">
         {HOBBIES.map((h, i) => (
           <Reveal
