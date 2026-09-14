@@ -22,9 +22,9 @@ function App() {
       <main>
         <Hero />
         <Story />
-        <Hobbies />
         <Career />
         <Projects />
+        <Hobbies />
       </main>
       <Footer />
     </div>
