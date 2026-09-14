@@ -181,12 +181,12 @@ ul { margin: 0; padding: 0; list-style: none; }
   background: #fff;
 }
 .cursor-ring {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   border: 1px solid rgba(255, 255, 255, 0.85);
 }
-.cursor-ring.is-hot { width: 78px; height: 78px; border-width: 2px; }
-.cursor-ring.is-down { width: 36px; height: 36px; }
+.cursor-ring.is-hot { width: 58px; height: 58px; border-width: 2px; }
+.cursor-ring.is-down { width: 28px; height: 28px; }
 
 .has-cursor .cursor,
 .has-cursor .cursor-ring { opacity: 1; }
