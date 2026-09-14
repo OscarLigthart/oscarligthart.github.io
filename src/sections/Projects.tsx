@@ -5,14 +5,14 @@ import Section from "./Section";
 import Reveal from "../components/Reveal";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
-import { faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { faYoutube, faGithub } from "@fortawesome/free-brands-svg-icons";
 import {
   faUpRightFromSquare,
   faNewspaper,
   faMicrophoneLines,
 } from "@fortawesome/free-solid-svg-icons";
 
-type LinkKind = "youtube" | "read" | "listen" | "source";
+type LinkKind = "youtube" | "read" | "listen" | "source" | "github";
 type ProjectLink = { kind: LinkKind; url: string; label: string };
 type Project = {
   badge: string;
@@ -28,6 +28,7 @@ const LINK_META: Record<LinkKind, { icon: IconDefinition; className: string }> =
   read: { icon: faNewspaper, className: "project-card__link--read" },
   listen: { icon: faMicrophoneLines, className: "project-card__link--listen" },
   source: { icon: faUpRightFromSquare, className: "project-card__link--ghost" },
+  github: { icon: faGithub, className: "project-card__link--read" },
 };
 
 const PROJECTS: Project[] = [
@@ -69,6 +70,20 @@ const PROJECTS: Project[] = [
       "A written deep dive on the Vinted Engineering blog into how we standardize large-scale, decentralized data pipelines with a code-generated Airflow abstraction layer.",
     links: [
       { kind: "read", url: "https://vinted.engineering/2025/12/29/orchestrating-success/", label: "Read article" },
+    ],
+  },
+  {
+    badge: "Apache Airflow",
+    year: "Open source",
+    title: "Contributions to Apache Airflow",
+    description:
+      "Merged pull requests to the orchestrator the platform runs on — fixes and improvements that came out of running Airflow at petabyte scale across 20+ teams.",
+    links: [
+      {
+        kind: "github",
+        url: "https://github.com/apache/airflow/pulls?q=is%3Apr+state%3Aclosed+author%3AOscarLigthart",
+        label: "Merged pull requests",
+      },
     ],
   },
   {

@@ -8,9 +8,9 @@ type NavLink = { id: string; label: string };
 
 const LINKS: NavLink[] = [
   { id: "story", label: "Story" },
-  { id: "hobbies", label: "Hobbies" },
   { id: "career", label: "Career" },
   { id: "projects", label: "Projects" },
+  { id: "hobbies", label: "Hobbies" },
 ];
 
 function Navbar() {
