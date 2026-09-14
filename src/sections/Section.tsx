@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 type SectionProps = {
   id: string;
   eyebrow?: string;
-  title: string;
+  title?: string;
   tone?: "light" | "dark";
   children?: ReactNode;
 };
@@ -15,10 +15,12 @@ function Section({ id, eyebrow, title, tone = "light", children }: SectionProps)
   return (
     <section id={id} className={`section section--${tone}`}>
       <div className="section__inner">
-        <header className="section__head">
-          {eyebrow && <p className="section__eyebrow">{eyebrow}</p>}
-          <h2 className="section__title">{title}</h2>
-        </header>
+        {(eyebrow || title) && (
+          <header className="section__head">
+            {eyebrow && <p className="section__eyebrow">{eyebrow}</p>}
+            {title && <h2 className="section__title">{title}</h2>}
+          </header>
+        )}
         {children}
       </div>
     </section>

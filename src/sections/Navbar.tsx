@@ -2,14 +2,15 @@
  *  Sticky top navigation with smooth-scroll anchors.
  */
 import { useEffect, useState } from "react";
+import { scrollToId } from "../lib/scroll";
 
 type NavLink = { id: string; label: string };
 
 const LINKS: NavLink[] = [
+  { id: "story", label: "Story" },
+  { id: "hobbies", label: "Hobbies" },
   { id: "career", label: "Career" },
   { id: "projects", label: "Projects" },
-  { id: "expertise", label: "Expertise" },
-  { id: "hobbies", label: "Hobbies" },
 ];
 
 function Navbar() {
@@ -26,7 +27,7 @@ function Navbar() {
   const go = (e: React.MouseEvent, id: string) => {
     e.preventDefault();
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+    scrollToId(id);
   };
 
   return (
